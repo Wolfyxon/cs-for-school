@@ -18,6 +18,9 @@ float b = float.Parse(Console.ReadLine()!);
 Console.WriteLine($"Dodawanie: {a + b}");
 Console.WriteLine($"Odejmowanie: {a - b}");
 Console.WriteLine($"Mnożenie: {a * b}");
-Console.WriteLine($"Dzielenie: {a / b}");
 
-
+try {
+    Console.WriteLine($"Dzielenie: {a / b}");
+} catch (DivideByZeroException) {
+    Console.WriteLine("Dzielenie przez 0!");
+}
