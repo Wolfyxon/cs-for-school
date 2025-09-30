@@ -129,3 +129,11 @@ else
     Console.WriteLine("Twój wiek jest nieparzysty");
 }
 
+if (IsPrime(age))
+{
+    Console.WriteLine("Jest liczbą pierwszą");
+}
+else
+{
+    Console.WriteLine("Nie jest liczbą pierwszą");
+}
