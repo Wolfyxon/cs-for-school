@@ -97,14 +97,16 @@ int InputInt(string prompt)
     }
 }
 
-string str = Input("Podaj tekst");
+string name = Input("Podaj imię");
 
-if(IsPalindrome(str))
+Console.WriteLine($"Witaj, {name}");
+
+if(IsPalindrome(name))
 {
-    Console.WriteLine("Podałeś palindrom.");
+    Console.WriteLine("Twoje imię to palindrom.");
 } else
 {
-    Console.WriteLine("Nie podałeś palindromu");
+    Console.WriteLine("Twoje imię to nie palindromu");
 }
 
 int year = InputInt("Podaj wiek urodzenia");
