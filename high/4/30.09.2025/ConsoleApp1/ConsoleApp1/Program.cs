@@ -4,7 +4,7 @@ bool IsPalindrome(string text)
     char[] textArr = text.ToCharArray();
     textArr.Reverse();
 
-    return text == new string(textArr);
+    return text.ToLower() == new string(textArr).ToLower();
 }
 
 bool IsPrime(int n)
