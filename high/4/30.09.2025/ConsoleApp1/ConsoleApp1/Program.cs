@@ -109,7 +109,7 @@ if(IsPalindrome(name))
     Console.WriteLine("Twoje imię to nie palindromu");
 }
 
-int year = InputInt("Podaj wiek urodzenia");
+int year = InputInt("Podaj rok urodzenia");
 int age = GetAge(year);
 
 Console.WriteLine($"Twój wiek: {age}");
