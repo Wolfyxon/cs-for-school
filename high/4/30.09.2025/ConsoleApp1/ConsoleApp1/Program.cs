@@ -66,7 +66,7 @@ int GetAge(int birthYear)
 
 string Input(string prompt)
 {
-    Console.Write($"{prompt}");
+    Console.Write($"{prompt}: ");
     return Console.ReadLine();
 }
 
