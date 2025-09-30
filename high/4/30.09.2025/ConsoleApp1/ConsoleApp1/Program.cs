@@ -113,3 +113,12 @@ int age = GetAge(year);
 Console.WriteLine($"Twój wiek: {age}");
 Console.WriteLine($"jesteś {GetAgeType(age)}");
 
+if (age % 2 == 0)
+{
+    Console.WriteLine("Twój wiek jest parzysty");
+}
+else
+{
+    Console.WriteLine("Twój wiek jest nieparzysty");
+}
+
