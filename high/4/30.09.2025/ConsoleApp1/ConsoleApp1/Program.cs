@@ -1,7 +1,7 @@
 ﻿
 bool IsPalindrome(string text)
 {
-    return text.Reverse() == text.Reverse();
+    return text.Reverse().ToString() == text;
 }
 
 bool IsPrime(int n)
