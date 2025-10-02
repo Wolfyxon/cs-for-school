@@ -222,6 +222,8 @@ void Main()
         Console.WriteLine("Nie jest liczbą pierwszą");
     }
 
+    Console.WriteLine($"Twój wiek jako kwadrat ma pole: {age * age}");
+
     Console.WriteLine("Tabliczka mnożenia wieku:");
     PrintMulTab(age);
 
