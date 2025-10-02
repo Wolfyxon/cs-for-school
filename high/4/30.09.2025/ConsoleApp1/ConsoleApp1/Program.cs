@@ -169,7 +169,7 @@ void PrintNumsTo(int n)
 
 void Main()
 {
-    string greeting = GetTimeGreeting(new DateTime().Hour);
+    string greeting = GetTimeGreeting(DateTime.Now.Hour);
     string name = Input("Podaj imię");
 
     Console.WriteLine($"{greeting}, {name}");
