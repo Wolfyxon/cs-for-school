@@ -140,6 +140,16 @@ string ApplyPadding(string str, int maxWidth)
     return str + space;
 }
 
+string Capitalize(string str)
+{
+    if(str.Length <= 1)
+    {
+        return str.ToUpper();
+    }
+
+    return str.Substring(0, 1).ToUpper() + str.Substring(1);
+}
+
 void PrintNumsTo(int n)
 {
     List<string> strResults = new List<string>();
@@ -172,7 +182,7 @@ void Main()
     string greeting = GetTimeGreeting(DateTime.Now.Hour);
     string name = Input("Podaj imię");
 
-    Console.WriteLine($"{greeting}, {name}");
+    Console.WriteLine($"{Capitalize(greeting)}, {name}");
 
     if (IsPalindrome(name))
     {
