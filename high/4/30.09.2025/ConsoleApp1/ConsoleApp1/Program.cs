@@ -97,6 +97,49 @@ int InputInt(string prompt)
     }
 }
 
+void PrintMulTab(int n)
+{
+    List<string> strResults = new List<string>();
+    int maxLen = 0;
+
+    for(int i = 1; i <= 10; i++)
+    {
+        string str = (n * i).ToString();
+        strResults.Add(str);
+
+        if(str.Length > maxLen)
+        {
+            maxLen = str.Length;
+        }
+    }
+
+    for (int i = 1; i <= 10; i++)
+    {
+        Console.Write($"{ApplyPadding(i.ToString(), maxLen)} | ");
+    }
+
+    Console.WriteLine("");
+
+    for (int i = 0; i < strResults.Count; i++)
+    {
+        Console.Write($"{ApplyPadding(strResults[i], maxLen)} | ");
+    }
+
+    Console.WriteLine("");
+}
+
+string ApplyPadding(string str, int maxWidth)
+{
+    string space = "";
+
+    for(int i = 0; i < maxWidth - str.Length; i++)
+    {
+        space += " ";
+    } 
+
+    return str + space;
+}
+
 string name = Input("Podaj imię");
 
 Console.WriteLine($"Witaj, {name}");
@@ -137,3 +180,6 @@ else
 {
     Console.WriteLine("Nie jest liczbą pierwszą");
 }
+
+Console.WriteLine("Tabliczka mnożenia wieku:");
+PrintMulTab(age);
