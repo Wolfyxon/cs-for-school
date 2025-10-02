@@ -169,9 +169,10 @@ void PrintNumsTo(int n)
 
 void Main()
 {
+    string greeting = GetTimeGreeting(new DateTime().Hour);
     string name = Input("Podaj imię");
 
-    Console.WriteLine($"Witaj, {name}");
+    Console.WriteLine($"{greeting}, {name}");
 
     if (IsPalindrome(name))
     {
