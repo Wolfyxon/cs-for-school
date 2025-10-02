@@ -140,6 +140,33 @@ string ApplyPadding(string str, int maxWidth)
     return str + space;
 }
 
+void PrintNumsTo(int n)
+{
+    List<string> strResults = new List<string>();
+    int maxLen = 0;
+
+    for (int i = 1; i <= n; i++)
+    {
+        string str = i.ToString();
+        strResults.Add(str);
+
+        if(str.Length > maxLen)
+        {
+            maxLen = str.Length;
+        }
+    }
+
+    for(int i = 0; i < strResults.Count; i++)
+    {
+        Console.Write($"{ApplyPadding(strResults[i], maxLen)} ");
+
+        if (i != 0 && i % 10 == 0)
+        {
+            Console.WriteLine();
+        }
+    }
+}
+
 void Main()
 {
     string name = Input("Podaj imię");
@@ -187,6 +214,8 @@ void Main()
     Console.WriteLine("Tabliczka mnożenia wieku:");
     PrintMulTab(age);
 
+    Console.WriteLine($"Liczby od 1 do {age}:");
+    PrintNumsTo(age);
 }
 
 Main();
