@@ -222,6 +222,15 @@ void Main()
         Console.WriteLine("Nie jest liczbą pierwszą");
     }
 
+    if (age % 5 == 0 && age % 7 == 0)
+    {
+        Console.WriteLine("Jest podzielny przez 5 i 7");
+    } 
+    else
+    {
+        Console.WriteLine("Nie jest podzielny przez 5 i 7");
+    }
+
     Console.WriteLine($"Twój wiek jako kwadrat ma pole: {age * age}");
 
     Console.WriteLine("Tabliczka mnożenia wieku:");
