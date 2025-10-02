@@ -140,46 +140,53 @@ string ApplyPadding(string str, int maxWidth)
     return str + space;
 }
 
-string name = Input("Podaj imię");
-
-Console.WriteLine($"Witaj, {name}");
-
-if(IsPalindrome(name))
+void Main()
 {
-    Console.WriteLine("Twoje imię to palindrom.");
-} else
-{
-    Console.WriteLine("Twoje imię to nie palindromu");
+    string name = Input("Podaj imię");
+
+    Console.WriteLine($"Witaj, {name}");
+
+    if (IsPalindrome(name))
+    {
+        Console.WriteLine("Twoje imię to palindrom.");
+    }
+    else
+    {
+        Console.WriteLine("Twoje imię to nie palindromu");
+    }
+
+    int year = InputInt("Podaj rok urodzenia");
+    int age = GetAge(year);
+
+    Console.WriteLine($"Twój wiek: {age}");
+    Console.WriteLine($"jesteś {GetAgeType(age)}");
+
+    if (age <= 0)
+    {
+        Console.WriteLine("Nie urodziłeś się jeszcze");
+    }
+
+    if (age % 2 == 0)
+    {
+        Console.WriteLine("Twój wiek jest parzysty");
+    }
+    else
+    {
+        Console.WriteLine("Twój wiek jest nieparzysty");
+    }
+
+    if (IsPrime(age))
+    {
+        Console.WriteLine("Jest liczbą pierwszą");
+    }
+    else
+    {
+        Console.WriteLine("Nie jest liczbą pierwszą");
+    }
+
+    Console.WriteLine("Tabliczka mnożenia wieku:");
+    PrintMulTab(age);
+
 }
 
-int year = InputInt("Podaj rok urodzenia");
-int age = GetAge(year);
-
-Console.WriteLine($"Twój wiek: {age}");
-Console.WriteLine($"jesteś {GetAgeType(age)}");
-
-if(age <= 0)
-{
-    Console.WriteLine("Nie urodziłeś się jeszcze");
-}
-
-if (age % 2 == 0)
-{
-    Console.WriteLine("Twój wiek jest parzysty");
-}
-else
-{
-    Console.WriteLine("Twój wiek jest nieparzysty");
-}
-
-if (IsPrime(age))
-{
-    Console.WriteLine("Jest liczbą pierwszą");
-}
-else
-{
-    Console.WriteLine("Nie jest liczbą pierwszą");
-}
-
-Console.WriteLine("Tabliczka mnożenia wieku:");
-PrintMulTab(age);
+Main();
