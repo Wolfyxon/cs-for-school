@@ -7,7 +7,13 @@ class Program
         Console.WriteLine("1) Obliczyć dane koła");
         Console.WriteLine("2) Obliczyć dane prostokąta");
 
-        string choice = Console.ReadLine();
+        string? choice = Console.ReadLine();
+
+        if(choice == null)
+        {
+            Console.WriteLine("bruh");
+            return;
+        }
 
         switch (choice) {
             case "1":
