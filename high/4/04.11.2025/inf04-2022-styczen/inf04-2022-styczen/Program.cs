@@ -88,11 +88,6 @@ class Program
             int min = array[minIdx];
             int n = array[i];
 
-            if (min == max)
-            {
-                break;
-            }
-
             array[i] = min;
             array[minIdx] = n;
         }
