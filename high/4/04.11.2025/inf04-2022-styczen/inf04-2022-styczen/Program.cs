@@ -90,30 +90,7 @@ class Program
             array[maxIdx] = n;
         }
     }
-
-    static int GetMinIdx(int[] array, int start = 0)
-    {
-        int minI = -1;
-
-        for (int i = start; i < array.Length; i++)
-        {
-            if (minI == -1)
-            {
-                minI = i;
-            }
-
-            int min = array[minI];
-            int n = array[i];
-
-            if (n < min)
-            {
-                minI = i;
-            }
-        }
-
-        return minI;
-    }
-
+    
     static int GetMaxIdx(int[] array, int start = 0)
     {
         int maxI = -1;
