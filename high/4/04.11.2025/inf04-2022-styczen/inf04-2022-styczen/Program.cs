@@ -32,8 +32,7 @@ znaczące nazwy zmiennych i funkcji.
 class Program
 {
     const int DesiredLength = 10;
-    static int[] nums = { };
-
+    
     /********************************************************
     * nazwa funkcji: Main
     * parametry wejściowe: 
@@ -53,6 +52,7 @@ class Program
         }
 
         string[] inputSplit = input.Split(" ");
+        IntArray array = new IntArray();
 
         if(inputSplit.Length != DesiredLength)
         {
@@ -61,49 +61,51 @@ class Program
 
         foreach(string str in inputSplit)
         {
-            nums = nums.Append(int.Parse(str)).ToArray();
+            array.Append(int.Parse(str));
         }
         
-        Console.WriteLine($"Przed sortowaniem: {IntArrayToString(nums)}");
-        Sort(nums);
-        Console.WriteLine($"Po sortowaniu: {IntArrayToString(nums)}");
+        Console.WriteLine($"Przed sortowaniem: {array}");
+        array.Sort();
+        Console.WriteLine($"Po sortowaniu: {array}");
+    }
+}
+
+class IntArray
+{
+    int[] array;
+    public IntArray()
+    {
+        array = Array.Empty<int>();
     }
 
     /********************************************************
-    * nazwa funkcji: IntArrayToString
+    * nazwa funkcji: Append
     * parametry wejściowe: 
-    *   array - tablica liczb całkowitych
-    * wartość zwracana: string - tablica przedstawiona jako tekst
+    *   n - wartość do dodania
+    * wartość zwracana: brak
     * autor: 123456789
     * ****************************************************/
-    static string IntArrayToString(int[] array)
+    public void Append(int n)
     {
-        string res = "";
-
-        foreach(int n in array)
-        {
-            res += n + " ";
-        }
-
-        return res;
+        array = array.Append(n).ToArray();
     }
 
     /********************************************************
     * nazwa funkcji: Sort
-    * parametry wejściowe: 
-    *   array - tablica liczb całkowitych
+    * parametry wejściowe: brak
     * wartość zwracana: brak
     * autor: 123456789
     * ****************************************************/
-    static void Sort(int[] array)
+    public void Sort()
     {
-        if(array.Length == 0)
+        if (array.Length == 0)
         {
             return;
         }
 
-        for(int i = 0; i < array.Length; i++) {
-            int maxIdx = GetMaxIdx(array, i);
+        for (int i = 0; i < array.Length; i++)
+        {
+            int maxIdx = GetMaxIdx(i);
             int max = array[maxIdx];
             int n = array[i];
 
@@ -115,18 +117,17 @@ class Program
     /********************************************************
     * nazwa funkcji: GetMaxIdx
     * parametry wejściowe: 
-    *   array - tablica liczb całkowitych
     *   start - indeks od którego funkcja ma zacząć
     * wartość zwracana: int - indeks maksymalnej wartości w tablicy
     * autor: 123456789
     * ****************************************************/
-    static int GetMaxIdx(int[] array, int start = 0)
+    public int GetMaxIdx(int start = 0)
     {
         int maxI = -1;
 
-        for(int i = start; i < array.Length; i++)
+        for (int i = start; i < array.Length; i++)
         {
-            if(maxI == -1)
+            if (maxI == -1)
             {
                 maxI = i;
             }
@@ -134,12 +135,30 @@ class Program
             int max = array[maxI];
             int n = array[i];
 
-            if(n > max)
+            if (n > max)
             {
                 maxI = i;
             }
         }
 
         return maxI;
+    }
+
+    /********************************************************
+    * nazwa funkcji: ToString
+    * parametry wejściowe: break
+    * wartość zwracana: string - tablica przedstawiona jako tekst
+    * autor: 123456789
+    * ****************************************************/
+    public override string ToString()
+    {
+        string res = "";
+
+        foreach (int n in array)
+        {
+            res += n + " ";
+        }
+
+        return res;
     }
 }
