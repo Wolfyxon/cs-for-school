@@ -81,15 +81,13 @@ class Program
             return;
         }
 
-        int max = array[GetMaxIdx(array)];
-
         for(int i = 0; i < array.Length; i++) {
-            int minIdx = GetMinIdx(array, i);
-            int min = array[minIdx];
+            int maxIdx = GetMaxIdx(array, i);
+            int max = array[maxIdx];
             int n = array[i];
 
-            array[i] = min;
-            array[minIdx] = n;
+            array[i] = max;
+            array[maxIdx] = n;
         }
     }
 
