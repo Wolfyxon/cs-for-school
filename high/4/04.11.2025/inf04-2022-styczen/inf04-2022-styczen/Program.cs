@@ -34,6 +34,13 @@ class Program
     const int DesiredLength = 10;
     static int[] nums = { };
 
+    /********************************************************
+    * nazwa funkcji: Main
+    * parametry wejściowe: 
+    *   args - tablica argumentów dla programu
+    * wartość zwracana: brak
+    * autor: 123456789
+    * ****************************************************/
     public static void Main(string[] args)
     {
         Console.WriteLine("Podaj liczby (oddzielone spacją):");
@@ -62,6 +69,13 @@ class Program
         Console.WriteLine($"Po sortowaniu: {IntArrayToString(nums)}");
     }
 
+    /********************************************************
+    * nazwa funkcji: IntArrayToString
+    * parametry wejściowe: 
+    *   array - tablica liczb całkowitych
+    * wartość zwracana: string - tablica przedstawiona jako tekst
+    * autor: 123456789
+    * ****************************************************/
     static string IntArrayToString(int[] array)
     {
         string res = "";
@@ -74,6 +88,13 @@ class Program
         return res;
     }
 
+    /********************************************************
+    * nazwa funkcji: Sort
+    * parametry wejściowe: 
+    *   array - tablica liczb całkowitych
+    * wartość zwracana: brak
+    * autor: 123456789
+    * ****************************************************/
     static void Sort(int[] array)
     {
         if(array.Length == 0)
@@ -90,7 +111,15 @@ class Program
             array[maxIdx] = n;
         }
     }
-    
+
+    /********************************************************
+    * nazwa funkcji: GetMaxIdx
+    * parametry wejściowe: 
+    *   array - tablica liczb całkowitych
+    *   start - indeks od którego funkcja ma zacząć
+    * wartość zwracana: int - indeks maksymalnej wartości w tablicy
+    * autor: 123456789
+    * ****************************************************/
     static int GetMaxIdx(int[] array, int start = 0)
     {
         int maxI = -1;
