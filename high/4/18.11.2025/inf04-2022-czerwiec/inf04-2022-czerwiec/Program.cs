@@ -80,14 +80,26 @@ class Program
     */
     static int IndexOf(int[] array, int value)
     {
-        for(int i = 0; i < array.Length; i++)
-        {
-            if (array[i] == value) {
-                return i;
-            }
-        }
+        int i = 0;
+        int[] guardedArray = [..array, value];
 
-        return -1;
+        while(true)
+        {
+            int currentValue = guardedArray[i];
+            
+            if(currentValue == value)
+            {
+                if(i != array.Length)
+                {
+                    return i;
+                } else
+                {
+                    return -1;
+                }
+            }
+            
+            i++;
+        }
     }
 
     /*
