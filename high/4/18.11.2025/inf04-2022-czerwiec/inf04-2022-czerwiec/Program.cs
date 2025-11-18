@@ -136,17 +136,17 @@ class Program
         return array;
     }
     /*
-    ******************************************************
-    nazwa funkcji: TestIndexOf
-    argumenty: array - int[], testowa  tablica
-               value - int, szukana wartość
-               expectedIndex - int, oczekiwany indeks na którym będzie wartość
-               testId - uint, numer testu
-    typ zwracany: brak
-    informacje: Funkcja sprawdzająca poprawne działanie funkcji IndexOf
-    autor: 1234567890
-    *****************************************************
-*/
+        ******************************************************
+        nazwa funkcji: TestIndexOf
+        argumenty: array - int[], testowa  tablica
+                   value - int, szukana wartość
+                   expectedIndex - int, oczekiwany indeks na którym będzie wartość
+                   testId - uint, numer testu
+        typ zwracany: brak
+        informacje: Funkcja sprawdzająca poprawne działanie funkcji IndexOf
+        autor: 1234567890
+        *****************************************************
+    */
     static void TestIndexOf(int[] array, int value, int expectedIndex, uint testId)
     {
         int index = IndexOf(array, value);
