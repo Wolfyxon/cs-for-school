@@ -78,7 +78,7 @@ class Program
         autor: 1234567890
         *****************************************************
     */
-    public static int IndexOf(int[] array, int value)
+    static int IndexOf(int[] array, int value)
     {
         for(int i = 0; i < array.Length; i++)
         {
@@ -99,7 +99,7 @@ class Program
         autor: 1234567890
         *****************************************************
     */
-    public static void PrintArray(int[] array)
+    static void PrintArray(int[] array)
     {
         for (int i = 0; i < array.Length; i++)
         {
@@ -124,7 +124,7 @@ class Program
         autor: 1234567890
         *****************************************************
     */
-    public static int[] GetRandomArray(uint len)
+    static int[] GetRandomArray(uint len)
     {
         int[] array = new int[len];
 
@@ -147,7 +147,7 @@ class Program
     autor: 1234567890
     *****************************************************
 */
-    public static void TestIndexOf(int[] array, int value, int expectedIndex, uint testId)
+    static void TestIndexOf(int[] array, int value, int expectedIndex, uint testId)
     {
         int index = IndexOf(array, value);
 
