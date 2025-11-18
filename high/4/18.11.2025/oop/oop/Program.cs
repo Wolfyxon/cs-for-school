@@ -29,8 +29,8 @@ class Program
 
 class Uczen
 {
-    String imie;
-    String nazwisko;
+    string imie;
+    string nazwisko;
     double sredniaOcen;
 
     public Uczen(string imie, string nazwisko, double sredniaOcen)
