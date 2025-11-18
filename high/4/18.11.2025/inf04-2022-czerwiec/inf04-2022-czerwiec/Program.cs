@@ -37,6 +37,8 @@ class Program
 {
     public static void Main(String[] args)
     {
+        RunTests();
+
         int[] randomArray = GetRandomArray(50);
         
         Console.Write("Podaj szukaną liczbę: ");
@@ -55,6 +57,26 @@ class Program
             Console.WriteLine("Tablica nie zawiera szukanej wartości");
         }
 
+    }
+
+    public static void TestIndexOf(int[] array, int value, int expectedIndex, int testId)
+    {
+        int index = IndexOf(array, value);
+
+        if (index != expectedIndex)
+        {
+            Console.WriteLine($"Test {testId}: BŁĄD. Oczekiwano {expectedIndex}, otrzymano {index}");
+            Environment.Exit(1);
+        }
+    }
+
+    public static void RunTests()
+    {
+        TestIndexOf([0, 3, 5], 10, -1, 1);
+        TestIndexOf([1, 3, 2], 1, 0, 2);
+        TestIndexOf([8, 9, 9], 9, 1, 3);
+        
+        Console.WriteLine("Testy zakończone poprawnie");
     }
 
     public static int IndexOf(int[] array, int value)
