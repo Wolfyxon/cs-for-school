@@ -70,47 +70,6 @@ class Program
 
     /*
         ******************************************************
-        nazwa funkcji: TestIndexOf
-        argumenty: array - int[], testowa  tablica
-                   value - int, szukana wartość
-                   expectedIndex - int, oczekiwany indeks na którym będzie wartość
-                   testId - uint, numer testu
-        typ zwracany: brak
-        informacje: Funkcja sprawdzająca poprawne działanie funkcji IndexOf
-        autor: 1234567890
-        *****************************************************
-    */
-    public static void TestIndexOf(int[] array, int value, int expectedIndex, uint testId)
-    {
-        int index = IndexOf(array, value);
-
-        if (index != expectedIndex)
-        {
-            Console.WriteLine($"Test {testId}: BŁĄD. Oczekiwano {expectedIndex}, otrzymano {index}");
-            Environment.Exit(1);
-        }
-    }
-
-    /*
-        ******************************************************
-        nazwa funkcji: RunTests
-        argumenty: brak
-        typ zwracany: brak
-        informacje: Funkcja sprawdzająca poprawne działanie programu
-        autor: 1234567890
-        *****************************************************
-    */
-    public static void RunTests()
-    {
-        TestIndexOf([0, 3, 5], 10, -1, 1);
-        TestIndexOf([1, 3, 2], 1, 0, 2);
-        TestIndexOf([8, 9, 9], 9, 1, 3);
-        
-        Console.WriteLine("Testy zakończone poprawnie");
-    }
-
-    /*
-        ******************************************************
         nazwa funkcji: IndexOf
         argumenty: array - int[], tablica gdzie ma być szukana wartość
                    value - int, szukana wartość
@@ -175,5 +134,45 @@ class Program
         }
 
         return array;
+    }
+    /*
+    ******************************************************
+    nazwa funkcji: TestIndexOf
+    argumenty: array - int[], testowa  tablica
+               value - int, szukana wartość
+               expectedIndex - int, oczekiwany indeks na którym będzie wartość
+               testId - uint, numer testu
+    typ zwracany: brak
+    informacje: Funkcja sprawdzająca poprawne działanie funkcji IndexOf
+    autor: 1234567890
+    *****************************************************
+*/
+    public static void TestIndexOf(int[] array, int value, int expectedIndex, uint testId)
+    {
+        int index = IndexOf(array, value);
+
+        if (index != expectedIndex)
+        {
+            Console.WriteLine($"Test {testId}: BŁĄD. Oczekiwano {expectedIndex}, otrzymano {index}");
+            Environment.Exit(1);
+        }
+    }
+
+    /*
+        ******************************************************
+        nazwa funkcji: RunTests
+        argumenty: brak
+        typ zwracany: brak
+        informacje: Funkcja sprawdzająca poprawne działanie programu
+        autor: 1234567890
+        *****************************************************
+    */
+    public static void RunTests()
+    {
+        TestIndexOf([0, 3, 5], 10, -1, 1);
+        TestIndexOf([1, 3, 2], 1, 0, 2);
+        TestIndexOf([8, 9, 9], 9, 1, 3);
+
+        Console.WriteLine("Testy zakończone poprawnie");
     }
 }
