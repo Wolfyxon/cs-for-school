@@ -35,6 +35,15 @@ using System.Security.Cryptography;
 
 class Program
 {
+    /*
+        ******************************************************
+        nazwa funkcji: Main
+        argumenty: args - String[], argumenty startowe dla programu
+        typ zwracany: brak
+        informacje: Początkowy punkt programu
+        autor: 1234567890
+        *****************************************************
+    */
     public static void Main(String[] args)
     {
         RunTests();
@@ -59,7 +68,19 @@ class Program
 
     }
 
-    public static void TestIndexOf(int[] array, int value, int expectedIndex, int testId)
+    /*
+        ******************************************************
+        nazwa funkcji: TestIndexOf
+        argumenty: array - int[], testowa  tablica
+                   value - int, szukana wartość
+                   expectedIndex - int, oczekiwany indeks na którym będzie wartość
+                   testId - uint, numer testu
+        typ zwracany: brak
+        informacje: Funkcja sprawdzająca poprawne działanie funkcji IndexOf
+        autor: 1234567890
+        *****************************************************
+    */
+    public static void TestIndexOf(int[] array, int value, int expectedIndex, uint testId)
     {
         int index = IndexOf(array, value);
 
@@ -70,6 +91,15 @@ class Program
         }
     }
 
+    /*
+        ******************************************************
+        nazwa funkcji: RunTests
+        argumenty: brak
+        typ zwracany: brak
+        informacje: Funkcja sprawdzająca poprawne działanie programu
+        autor: 1234567890
+        *****************************************************
+    */
     public static void RunTests()
     {
         TestIndexOf([0, 3, 5], 10, -1, 1);
@@ -79,6 +109,16 @@ class Program
         Console.WriteLine("Testy zakończone poprawnie");
     }
 
+    /*
+        ******************************************************
+        nazwa funkcji: IndexOf
+        argumenty: array - int[], tablica gdzie ma być szukana wartość
+                   value - int, szukana wartość
+        typ zwracany: int, indeks szukanej wartości lub -1 gdy jej nie ma w tablicy
+        informacje: Funkcja szukająca indeks danej wartości w podanej tablicy
+        autor: 1234567890
+        *****************************************************
+    */
     public static int IndexOf(int[] array, int value)
     {
         for(int i = 0; i < array.Length; i++)
@@ -91,6 +131,15 @@ class Program
         return -1;
     }
 
+    /*
+        ******************************************************
+        nazwa funkcji: PrintArray
+        argumenty: array - int[], tablica do wypisania
+        typ zwracany: brak
+        informacje: Funkcja wypisująca elementy tablicy
+        autor: 1234567890
+        *****************************************************
+    */
     public static void PrintArray(int[] array)
     {
         for (int i = 0; i < array.Length; i++)
@@ -107,6 +156,15 @@ class Program
         Console.WriteLine();
     }
 
+    /*
+        ******************************************************
+        nazwa funkcji: IndexOf
+        argumenty: len - uint, porządana długość tablicy
+        typ zwracany: int[], wygenerowana tablica
+        informacje: Funkcja generująca tablicę losowych liczb
+        autor: 1234567890
+        *****************************************************
+    */
     public static int[] GetRandomArray(uint len)
     {
         int[] array = new int[len];
