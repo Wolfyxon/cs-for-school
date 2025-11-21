@@ -10,6 +10,16 @@
     }
 }
 
+/*
+****************************************************************************
+    klasa: CharLib
+    opis: Klasa z funkcjami do operacji znakowych
+    metody: CountVowels - int, liczba samogłosek
+            RemoveDuplicateChars - String, tekst z usuniętymi duplikatami
+            IsVowel - bool, czy podany znak jest samogłoską
+    autor: 1234567890
+**************************************************************************** 
+*/
 class CharLib
 {
     const String VOWELS = "aąeęiouóyAĄEĘIOUÓY";
