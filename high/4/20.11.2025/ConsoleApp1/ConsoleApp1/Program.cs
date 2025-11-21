@@ -2,7 +2,11 @@
 {
     public static void Main(String[] args)
     {
+        Console.Write("Podaj tekst: ");
+        String text = Console.ReadLine()!;
 
+        Console.WriteLine($"Liczba samogłosek: {CharLib.CountVowels(text)}");
+        Console.WriteLine($"Tekst po usunięciu duplikatów: {CharLib.RemoveDuplicateChars(text)}");
     }
 }
 
@@ -37,7 +41,7 @@ class CharLib
             {
                 Char currentChar = text[i];
 
-                if (i == 0 || res[i - 1] != currentChar)
+                if (res.Length == 0 || res.Last() != currentChar)
                 {
                     res += currentChar;
                 }
