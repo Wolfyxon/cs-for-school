@@ -5,6 +5,8 @@
         int[] array = GetRandomArray(100);
         Sort(array);
 
+        Console.WriteLine("Posortowana tablica:");
+
         for(uint i = 0; i < array.Length; i++)
         {
             Console.Write($"{array[i]} ");
