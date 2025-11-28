@@ -1,7 +1,11 @@
-﻿class Program
+﻿using System.Diagnostics;
+
+class Program
 {
     public static void Main(String[] args)
     {
+        RunTests();
+
         int[] array = GetRandomArray(100);
         Sort(array);
 
@@ -51,4 +55,47 @@
 
         return res;
     }
-}
+
+    static void RunTests()
+    {
+        Debug.Assert(
+            ArrayEquals(
+                    SortAndReturn([ 1, 3, 2]), 
+                    [1, 2, 3]
+            ),
+            "Test 1 błędny"
+        );
+
+        Debug.Assert(
+            !ArrayEquals(
+                    SortAndReturn([2, 1, 3]),
+                    [3, 2, 1]
+            ),
+            "Test 2 błędny"
+        );
+    }
+
+    static int[] SortAndReturn(int[] array)
+    {
+        Sort(array);
+        return array;
+    }
+
+    static bool ArrayEquals(int[] a, int[] b)
+    {
+        if (a.Length != b.Length)
+        {
+            return false;
+        }
+
+        for (uint i = 0; i < a.Length; i++)
+        {
+            if (a[i] != b[i])
+            {
+                return false;
+            }
+        }
+
+        return true;
+    }
+  }
