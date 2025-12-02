@@ -2,8 +2,6 @@ namespace WinFormsApp1
 {
     public partial class Form1 : Form
     {
-
-
         string Operator = "";
         string NumAStr = "";
         string NumBStr = "";
