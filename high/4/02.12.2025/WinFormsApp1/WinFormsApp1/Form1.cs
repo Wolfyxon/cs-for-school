@@ -32,6 +32,9 @@ namespace WinFormsApp1
 
                 btn.Click += new System.EventHandler((object sender, EventArgs e) =>
                 {
+                    if (NumAStr.Length == 0)
+                        return;
+
                     Operator = btn.Text;
                     Update();
                 });
