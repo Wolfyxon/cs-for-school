@@ -29,19 +29,19 @@
         private void InitializeComponent()
         {
             employeeGroup = new GroupBox();
-            label1 = new Label();
-            this.nameInput = new TextBox();
+            positionSelect = new ComboBox();
+            label3 = new Label();
             surnameInput = new TextBox();
             label2 = new Label();
-            label3 = new Label();
-            positionSelect = new ComboBox();
+            nameInput = new TextBox();
+            label1 = new Label();
             groupBox1 = new GroupBox();
-            label6 = new Label();
-            passLenInput = new TextBox();
-            caseCheck = new CheckBox();
-            numsCheck = new CheckBox();
-            specialCheck = new CheckBox();
             passGenBtn = new Button();
+            specialCheck = new CheckBox();
+            numsCheck = new CheckBox();
+            caseCheck = new CheckBox();
+            passLenInput = new TextBox();
+            label6 = new Label();
             confirmBtn = new Button();
             employeeGroup.SuspendLayout();
             groupBox1.SuspendLayout();
@@ -53,7 +53,7 @@
             employeeGroup.Controls.Add(label3);
             employeeGroup.Controls.Add(surnameInput);
             employeeGroup.Controls.Add(label2);
-            employeeGroup.Controls.Add(this.nameInput);
+            employeeGroup.Controls.Add(nameInput);
             employeeGroup.Controls.Add(label1);
             employeeGroup.Location = new Point(12, 12);
             employeeGroup.Name = "employeeGroup";
@@ -62,21 +62,23 @@
             employeeGroup.TabStop = false;
             employeeGroup.Text = "Dane pracownica";
             // 
-            // label1
+            // positionSelect
             // 
-            label1.AutoSize = true;
-            label1.Location = new Point(6, 22);
-            label1.Name = "label1";
-            label1.Size = new Size(30, 15);
-            label1.TabIndex = 0;
-            label1.Text = "Imię";
+            positionSelect.FormattingEnabled = true;
+            positionSelect.Items.AddRange(new object[] { "Kierownik", "Starszy programista", "Młodszy programista", "Tester" });
+            positionSelect.Location = new Point(98, 77);
+            positionSelect.Name = "positionSelect";
+            positionSelect.Size = new Size(118, 23);
+            positionSelect.TabIndex = 1;
             // 
-            // nameInput
+            // label3
             // 
-            this.nameInput.Location = new Point(98, 19);
-            this.nameInput.Name = "nameInput";
-            this.nameInput.Size = new Size(118, 23);
-            this.nameInput.TabIndex = 1;
+            label3.AutoSize = true;
+            label3.Location = new Point(6, 80);
+            label3.Name = "label3";
+            label3.Size = new Size(67, 15);
+            label3.TabIndex = 4;
+            label3.Text = "Stanowisko";
             // 
             // surnameInput
             // 
@@ -94,23 +96,21 @@
             label2.TabIndex = 2;
             label2.Text = "Nazwisko";
             // 
-            // label3
+            // nameInput
             // 
-            label3.AutoSize = true;
-            label3.Location = new Point(6, 80);
-            label3.Name = "label3";
-            label3.Size = new Size(67, 15);
-            label3.TabIndex = 4;
-            label3.Text = "Stanowisko";
+            nameInput.Location = new Point(98, 19);
+            nameInput.Name = "nameInput";
+            nameInput.Size = new Size(118, 23);
+            nameInput.TabIndex = 1;
             // 
-            // positionSelect
+            // label1
             // 
-            positionSelect.FormattingEnabled = true;
-            positionSelect.Items.AddRange(new object[] { "Error", "Error" });
-            positionSelect.Location = new Point(98, 77);
-            positionSelect.Name = "positionSelect";
-            positionSelect.Size = new Size(118, 23);
-            positionSelect.TabIndex = 1;
+            label1.AutoSize = true;
+            label1.Location = new Point(6, 22);
+            label1.Name = "label1";
+            label1.Size = new Size(30, 15);
+            label1.TabIndex = 0;
+            label1.Text = "Imię";
             // 
             // groupBox1
             // 
@@ -127,41 +127,17 @@
             groupBox1.TabStop = false;
             groupBox1.Text = "Generowanie hasła";
             // 
-            // label6
+            // passGenBtn
             // 
-            label6.AutoSize = true;
-            label6.Location = new Point(6, 22);
-            label6.Name = "label6";
-            label6.Size = new Size(67, 15);
-            label6.TabIndex = 0;
-            label6.Text = "Ile znaków?";
-            // 
-            // passLenInput
-            // 
-            passLenInput.Location = new Point(98, 19);
-            passLenInput.Name = "passLenInput";
-            passLenInput.Size = new Size(118, 23);
-            passLenInput.TabIndex = 1;
-            // 
-            // caseCheck
-            // 
-            caseCheck.AutoSize = true;
-            caseCheck.Location = new Point(6, 52);
-            caseCheck.Name = "caseCheck";
-            caseCheck.Size = new Size(126, 19);
-            caseCheck.TabIndex = 2;
-            caseCheck.Text = "Małe i wielkie litery";
-            caseCheck.UseVisualStyleBackColor = true;
-            // 
-            // numsCheck
-            // 
-            numsCheck.AutoSize = true;
-            numsCheck.Location = new Point(6, 76);
-            numsCheck.Name = "numsCheck";
-            numsCheck.Size = new Size(54, 19);
-            numsCheck.TabIndex = 3;
-            numsCheck.Text = "Cyfry";
-            numsCheck.UseVisualStyleBackColor = true;
+            passGenBtn.BackColor = Color.SteelBlue;
+            passGenBtn.ForeColor = Color.White;
+            passGenBtn.Location = new Point(60, 137);
+            passGenBtn.Name = "passGenBtn";
+            passGenBtn.Size = new Size(96, 25);
+            passGenBtn.TabIndex = 5;
+            passGenBtn.Text = "Generuj hasło";
+            passGenBtn.UseVisualStyleBackColor = false;
+            passGenBtn.Click += passGenBtn_Click;
             // 
             // specialCheck
             // 
@@ -173,16 +149,41 @@
             specialCheck.Text = "Znaki specjalne";
             specialCheck.UseVisualStyleBackColor = true;
             // 
-            // passGenBtn
+            // numsCheck
             // 
-            passGenBtn.BackColor = Color.SteelBlue;
-            passGenBtn.ForeColor = Color.White;
-            passGenBtn.Location = new Point(60, 137);
-            passGenBtn.Name = "passGenBtn";
-            passGenBtn.Size = new Size(96, 25);
-            passGenBtn.TabIndex = 5;
-            passGenBtn.Text = "Generuj hasło";
-            passGenBtn.UseVisualStyleBackColor = false;
+            numsCheck.AutoSize = true;
+            numsCheck.Location = new Point(6, 76);
+            numsCheck.Name = "numsCheck";
+            numsCheck.Size = new Size(54, 19);
+            numsCheck.TabIndex = 3;
+            numsCheck.Text = "Cyfry";
+            numsCheck.UseVisualStyleBackColor = true;
+            // 
+            // caseCheck
+            // 
+            caseCheck.AutoSize = true;
+            caseCheck.Location = new Point(6, 52);
+            caseCheck.Name = "caseCheck";
+            caseCheck.Size = new Size(126, 19);
+            caseCheck.TabIndex = 2;
+            caseCheck.Text = "Małe i wielkie litery";
+            caseCheck.UseVisualStyleBackColor = true;
+            // 
+            // passLenInput
+            // 
+            passLenInput.Location = new Point(98, 19);
+            passLenInput.Name = "passLenInput";
+            passLenInput.Size = new Size(118, 23);
+            passLenInput.TabIndex = 1;
+            // 
+            // label6
+            // 
+            label6.AutoSize = true;
+            label6.Location = new Point(6, 22);
+            label6.Name = "label6";
+            label6.Size = new Size(67, 15);
+            label6.TabIndex = 0;
+            label6.Text = "Ile znaków?";
             // 
             // confirmBtn
             // 
@@ -194,6 +195,7 @@
             confirmBtn.TabIndex = 6;
             confirmBtn.Text = "Zatwierdź";
             confirmBtn.UseVisualStyleBackColor = false;
+            confirmBtn.Click += confirmBtn_Click;
             // 
             // Form1
             // 
@@ -220,6 +222,7 @@
         private TextBox textBox1;
         private TextBox textBox3;
         private Label label3;
+        private TextBox nameInput;
         private TextBox surnameInput;
         private Label label2;
         private ComboBox positionSelect;
