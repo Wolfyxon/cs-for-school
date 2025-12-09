@@ -64,6 +64,7 @@
             // 
             // positionSelect
             // 
+            positionSelect.DropDownStyle = ComboBoxStyle.DropDownList;
             positionSelect.FormattingEnabled = true;
             positionSelect.Items.AddRange(new object[] { "Kierownik", "Starszy programista", "Młodszy programista", "Tester" });
             positionSelect.Location = new Point(98, 77);
