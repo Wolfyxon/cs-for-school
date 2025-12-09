@@ -67,7 +67,7 @@ namespace WinFormsApp1
 
                 if (randCase)
                 {
-                    if (rng.Next(0, 1) == 0)
+                    if (rng.Next(0, 2) == 0)
                     {
                         ch = Char.ToUpper(ch);
                     }
