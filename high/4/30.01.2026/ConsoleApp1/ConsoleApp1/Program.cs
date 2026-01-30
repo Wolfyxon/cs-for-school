@@ -3,7 +3,14 @@
     const int LEN = 6;
     const int RANGE_MIN = 1;
     const int RANGE_MAX = 49;
-
+    
+    /********************************************************
+     nazwa funkcji:       Main
+     opis funkcji         Punkt startowy programu
+     parametry:           args - argumenty dla programu
+     zwracany typ i opis: brak
+     autor:               1234567890
+     ********************************************************/
     static void Main(string[] args)
     {
         Console.Write("Podaj liczbę losowań: ");
@@ -43,6 +50,13 @@
         
     }
 
+    /********************************************************
+     nazwa funkcji:       GenArray
+     opis funkcji:        Generuje tablicę losowych liczb
+     parametry:           brak
+     zwracany typ i opis: int[] - Tablica losowych liczb
+     autor:               1234567890
+     ********************************************************/
     static int[] GenArray()
     {
         int[] res = new int[LEN];
@@ -63,6 +77,15 @@
         return res;
     }
 
+
+    /********************************************************
+     nazwa funkcji:       PrintArray
+     opis funkcji:        Wypisuje tablicę liczb
+     parametry:           index - numer tablicy
+                          array - tablica liczb
+     zwracany typ i opis: brak
+     autor:               1234567890
+     ********************************************************/
     static void PrintArray(int index, int[] array)
     {
         Console.Write($"Losowanie {index + 1}: ");
