@@ -102,6 +102,7 @@
             btnCheckPrice.TabIndex = 1;
             btnCheckPrice.Text = "Sprawdź cenę";
             btnCheckPrice.UseVisualStyleBackColor = true;
+            btnCheckPrice.Click += btnCheckPrice_Click;
             // 
             // pictureBox1
             // 
@@ -194,6 +195,7 @@
             btnSubmit.TabIndex = 6;
             btnSubmit.Text = "Zatwierdź";
             btnSubmit.UseVisualStyleBackColor = true;
+            btnSubmit.Click += btnSubmit_Click;
             // 
             // Form1
             // 
