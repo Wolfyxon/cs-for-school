@@ -1,4 +1,5 @@
 using System.Drawing;
+using WinFormsApp1.Properties;
 
 namespace WinFormsApp1
 {
@@ -32,6 +33,15 @@ namespace WinFormsApp1
         {
             string color = GetSelectedEyeColorName();
             MessageBox.Show($"{inpName.Text} {inpSurname.Text} kolor oczu {color}");
+        }
+
+        private void inpNumber_Leave(object sender, EventArgs e)
+        {
+            Image? face = (Image?) Resources.ResourceManager.GetObject(inpNumber.Text + "-zdjecie");
+            Image? fingerprint = (Image?)Resources.ResourceManager.GetObject(inpNumber.Text + "-odcisk");
+            
+            imgFace.Image = face;
+            imgFingerprint.Image = fingerprint;
         }
     }
 }

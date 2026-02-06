@@ -30,8 +30,8 @@
         {
             label1 = new Label();
             inpNumber = new MaskedTextBox();
-            pictureBox1 = new PictureBox();
-            pictureBox2 = new PictureBox();
+            imgFingerprint = new PictureBox();
+            imgFace = new PictureBox();
             inpName = new MaskedTextBox();
             label2 = new Label();
             inpSurname = new MaskedTextBox();
@@ -41,8 +41,8 @@
             radioGreen = new RadioButton();
             radioBlue = new RadioButton();
             btnSubmit = new Button();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)imgFingerprint).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)imgFace).BeginInit();
             groupBox1.SuspendLayout();
             SuspendLayout();
             // 
@@ -57,29 +57,36 @@
             // 
             // inpNumber
             // 
+            inpNumber.BackColor = Color.Azure;
             inpNumber.Location = new Point(147, 40);
             inpNumber.Name = "inpNumber";
             inpNumber.Size = new Size(249, 27);
             inpNumber.TabIndex = 1;
+            inpNumber.Leave += inpNumber_Leave;
             // 
-            // pictureBox1
+            // imgFingerprint
             // 
-            pictureBox1.Location = new Point(637, 40);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(125, 180);
-            pictureBox1.TabIndex = 2;
-            pictureBox1.TabStop = false;
+            imgFingerprint.Image = Properties.Resources._000_odcisk;
+            imgFingerprint.Location = new Point(637, 40);
+            imgFingerprint.Name = "imgFingerprint";
+            imgFingerprint.Size = new Size(125, 180);
+            imgFingerprint.SizeMode = PictureBoxSizeMode.StretchImage;
+            imgFingerprint.TabIndex = 2;
+            imgFingerprint.TabStop = false;
             // 
-            // pictureBox2
+            // imgFace
             // 
-            pictureBox2.Location = new Point(447, 40);
-            pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new Size(147, 180);
-            pictureBox2.TabIndex = 3;
-            pictureBox2.TabStop = false;
+            imgFace.Image = Properties.Resources._000_zdjecie;
+            imgFace.Location = new Point(447, 40);
+            imgFace.Name = "imgFace";
+            imgFace.Size = new Size(147, 180);
+            imgFace.SizeMode = PictureBoxSizeMode.StretchImage;
+            imgFace.TabIndex = 3;
+            imgFace.TabStop = false;
             // 
             // inpName
             // 
+            inpName.BackColor = Color.Azure;
             inpName.Location = new Point(147, 82);
             inpName.Name = "inpName";
             inpName.Size = new Size(249, 27);
@@ -96,6 +103,7 @@
             // 
             // inpSurname
             // 
+            inpSurname.BackColor = Color.Azure;
             inpSurname.Location = new Point(147, 124);
             inpSurname.Name = "inpSurname";
             inpSurname.Size = new Size(249, 27);
@@ -156,12 +164,13 @@
             // 
             // btnSubmit
             // 
+            btnSubmit.BackColor = Color.Azure;
             btnSubmit.Location = new Point(536, 246);
             btnSubmit.Name = "btnSubmit";
             btnSubmit.Size = new Size(167, 46);
             btnSubmit.TabIndex = 9;
             btnSubmit.Text = "OK";
-            btnSubmit.UseVisualStyleBackColor = true;
+            btnSubmit.UseVisualStyleBackColor = false;
             btnSubmit.Click += btnSubmit_Click;
             // 
             // Form1
@@ -176,14 +185,14 @@
             Controls.Add(label3);
             Controls.Add(inpName);
             Controls.Add(label2);
-            Controls.Add(pictureBox2);
-            Controls.Add(pictureBox1);
+            Controls.Add(imgFace);
+            Controls.Add(imgFingerprint);
             Controls.Add(inpNumber);
             Controls.Add(label1);
             Name = "Form1";
             Text = "Wprowadzanie danych do paszportu. Wykonał: 1234567890";
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
+            ((System.ComponentModel.ISupportInitialize)imgFingerprint).EndInit();
+            ((System.ComponentModel.ISupportInitialize)imgFace).EndInit();
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
             ResumeLayout(false);
@@ -194,8 +203,8 @@
 
         private Label label1;
         private MaskedTextBox inpNumber;
-        private PictureBox pictureBox1;
-        private PictureBox pictureBox2;
+        private PictureBox imgFingerprint;
+        private PictureBox imgFace;
         private MaskedTextBox inpName;
         private Label label2;
         private MaskedTextBox inpSurname;
