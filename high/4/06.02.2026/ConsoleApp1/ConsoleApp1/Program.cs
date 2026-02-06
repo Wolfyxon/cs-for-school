@@ -5,6 +5,15 @@ class Program
 {
     const int PESEL_LENGTH = 11;
 
+    /*
+    **********************************************
+    nazwa funkcji: Main
+    opis funkcji: Punkt startowy programu
+    parametry: args - argumenty dla programu
+    zwracany typ i opis: brak
+    autor: 1234567890
+    ***********************************************
+    */
     static void Main(String[] args)
     {
         RunTests();
@@ -46,6 +55,15 @@ class Program
         }
     }
 
+    /*
+    **********************************************
+    nazwa funkcji: RunTests
+    opis funkcji: Wykonuje testy programu
+    parametry: brak
+    zwracany typ i opis: brak
+    autor: 1234567890
+    ***********************************************
+    */
     static void RunTests()
     {
         string peselStr = "55030101193";
@@ -55,6 +73,16 @@ class Program
         Debug.Assert(VerifyChecksum(pesel), "Suma kontrolna testowego PESELu błędna");
     }
 
+    /*
+    **********************************************
+    nazwa funkcji: ParseDigits
+    opis funkcji: Konwertuje tekst składający się z
+                  liczb na tablicę jego cyfr.
+    parametry: str - teskt
+    zwracany typ i opis: int[] - tablica cyfr
+    autor: 1234567890
+    ***********************************************
+    */
     static int[] ParseDigits(string str)
     {
         int[] digits = new int[str.Length];
@@ -67,6 +95,17 @@ class Program
         return digits;
     }
 
+    /*
+    **********************************************
+    nazwa funkcji: VerifyChecksum
+    opis funkcji: Sprawdza czy suma kontrolna numeru
+                  PESEL jest poprawna.
+    parametry: pesel - numer PESEL jako tablica
+    zwracany typ i opis: bool - true gdy suma się zgadza,
+                                false gdy nie
+    autor: 1234567890
+    ***********************************************
+    */
     static bool VerifyChecksum(int[] pesel)
     {
         int[] WEIGHTS = { 1, 3, 7, 9, 1, 3, 7, 9, 1, 3 };
@@ -93,6 +132,17 @@ class Program
         return r == lastDigit;
     }
 
+    /*
+    **********************************************
+    nazwa funkcji: ParseGender
+    opis funkcji: Sprawdza płeć w numerze PESEL
+    parametry: pesel - numer PESEL jako tablica
+    zwracany typ i opis: char - Kod płci
+                                'K' dla kobiety, 
+                                'M' dla mężczyzny
+    autor: 1234567890
+    ***********************************************
+    */
     static char ParseGender(int[] pesel)
     {
         int genderDigit = pesel[10]; // 11
