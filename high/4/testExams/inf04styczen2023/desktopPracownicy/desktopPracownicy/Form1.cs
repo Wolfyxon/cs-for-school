@@ -8,16 +8,31 @@ namespace desktopPracownicy
         private const String NUMS = "1234567890";
         private const String SPECIAL = "@#$%^&*()_+-=";
 
+        /**********************************************
+        nazwa funkcji: Form1
+        opis funkcji: Konstruktor klasy formularza
+        parametry: brak
+        zwracany typ i opis: brak
+        autor: 1234567890
+        ***********************************************/
         public Form1()
         {
             InitializeComponent();
         }
 
+        /**********************************************
+        nazwa funkcji: btnGenPass_Click
+        opis funkcji: Obsługa zdarzenia kliknięcia guzika "Generuj hasło"
+        parametry: sender - obiekt wysyłający zdarzenie
+                   e      - argumenty zdarzenia
+        zwracany typ i opis: brak
+        autor: 1234567890
+        ***********************************************/
         private void btnGenPass_Click(object sender, EventArgs e)
         {
             Random rng = new Random();
             String chars = GetPasswordCharset();
-
+            
             int len = int.Parse(inpLen.Text);
 
             password = "";
@@ -37,6 +52,15 @@ namespace desktopPracownicy
             MessageBox.Show(password);
         }
 
+
+        /**********************************************
+        nazwa funkcji: btnConfirm_Click
+        opis funkcji: Obsługa zdarzenia kliknięcia guzika "Zatwierdź"
+        parametry: sender - obiekt wysyłający zdarzenie
+                   e      - argumenty zdarzenia
+        zwracany typ i opis: brak
+        autor: 1234567890
+        ***********************************************/
         private void btnConfirm_Click(object sender, EventArgs e)
         {
             MessageBox.Show(
@@ -44,6 +68,16 @@ namespace desktopPracownicy
             );
         }
 
+
+        /**********************************************
+        nazwa funkcji: GetPasswordCharset
+        opis funkcji: Funkcja zwracająca zestaw znaków do
+                      wygenerowanego hasła na podstawie
+                      ustawień użytkownika.
+        parametry: brak
+        zwracany typ i opis: String - zestaw znaków
+        autor: 1234567890
+        ***********************************************/
         String GetPasswordCharset() 
         {
             String res = LETTERS;
