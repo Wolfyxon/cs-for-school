@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             label1 = new Label();
             label2 = new Label();
             label3 = new Label();
@@ -36,6 +37,8 @@
             btnEncrypt = new Button();
             btnSave = new Button();
             lblEncrypted = new TextBox();
+            pictureBox1 = new PictureBox();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
             // label1
@@ -100,7 +103,7 @@
             // btnSave
             // 
             btnSave.BackColor = Color.LightBlue;
-            btnSave.Location = new Point(634, 470);
+            btnSave.Location = new Point(623, 485);
             btnSave.Name = "btnSave";
             btnSave.Size = new Size(263, 47);
             btnSave.TabIndex = 6;
@@ -111,13 +114,23 @@
             // lblEncrypted
             // 
             lblEncrypted.BackColor = Color.CadetBlue;
-            lblEncrypted.BorderStyle = BorderStyle.FixedSingle;
+            lblEncrypted.BorderStyle = BorderStyle.None;
             lblEncrypted.ForeColor = Color.AliceBlue;
-            lblEncrypted.Location = new Point(568, 97);
+            lblEncrypted.Location = new Point(601, 97);
             lblEncrypted.Multiline = true;
             lblEncrypted.Name = "lblEncrypted";
-            lblEncrypted.Size = new Size(384, 353);
+            lblEncrypted.Size = new Size(317, 353);
             lblEncrypted.TabIndex = 7;
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.BackgroundImage = (Image)resources.GetObject("pictureBox1.BackgroundImage");
+            pictureBox1.BackgroundImageLayout = ImageLayout.Stretch;
+            pictureBox1.Location = new Point(568, 79);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(381, 384);
+            pictureBox1.TabIndex = 8;
+            pictureBox1.TabStop = false;
             // 
             // Form1
             // 
@@ -126,6 +139,7 @@
             BackColor = Color.CadetBlue;
             ClientSize = new Size(1001, 544);
             Controls.Add(lblEncrypted);
+            Controls.Add(pictureBox1);
             Controls.Add(btnSave);
             Controls.Add(btnEncrypt);
             Controls.Add(inpKey);
@@ -135,6 +149,7 @@
             Controls.Add(label1);
             Name = "Form1";
             Text = "Szyfrowanie. Wykonane przez 1234567890";
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -149,5 +164,6 @@
         private Button btnEncrypt;
         private Button btnSave;
         private TextBox lblEncrypted;
+        private PictureBox pictureBox1;
     }
 }

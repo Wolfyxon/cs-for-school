@@ -41,12 +41,13 @@ namespace desktop
         private void btnEncrypt_Click(object sender, EventArgs e)
         {
             int key = 0;
-            
+
             try
             {
                 key = int.Parse(inpKey.Text);
-            } catch { }
-        
+            }
+            catch { }
+
             lblEncrypted.Text = Ceasar(inpText.Text, key);
         }
 
@@ -55,7 +56,7 @@ namespace desktop
             SaveFileDialog dial = new SaveFileDialog();
             dial.ShowDialog();
 
-            if(dial.FileName == "")
+            if (dial.FileName == "")
             {
                 return;
             }
