@@ -1,7 +1,7 @@
-namespace desktopPracownicy
+namespace desktop
 {
     internal static class Program
-    {
+    {        
         /// <summary>
         ///  The main entry point for the application.
         /// </summary>
@@ -13,5 +13,7 @@ namespace desktopPracownicy
             ApplicationConfiguration.Initialize();
             Application.Run(new Form1());
         }
+        
+     
     }
 }
